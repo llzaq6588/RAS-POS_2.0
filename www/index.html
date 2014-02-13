@@ -1,0 +1,33 @@
+<html><!--웹 에플리케이션 접속시 최초로 접속되는 화면이다. 폼에서 바코드가 찍히면 해당 바코드는 code라는 변수로 result_price.php로 post된다. 이때 바코드 기계는 다음과 같은 설정을 해야 한다.
+
+1. 입력 : text입력
+2. 입력후 행동 : QR <다른 표현으로도 있을지 모르겠다. 이 행동은 사용자가 text로 바코드를 입력한 뒤에 자동으로 ENTER가 되는 것을 말한다.
+
+* 본 웹 에플리케이션은 1.5ver부터 7inch화면에 최적화되도록 맞추어져 있다.
+-->
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>구매</title>
+
+</head>
+
+
+<body onload="document.form1.code.focus();"><!--입력장치로는 키보드와 마우스는 없고 유일하게 바코드리더기만 있다는 가정하에 작성된 프로그램이기 때문에 포커스 유도는 필수이다.-->
+<p align="center"><span style="font-size:36pt;"><font face="맑은 고딕"><b>
+구매</b></font></span></p>
+<table border="1" width="591" align="center">
+    <tr>
+        <td width="581" height="218" bordercolor="white">
+            <form name="form1" method="post" action="result_price.php">
+                <p>&nbsp;</p>
+                <p align="center"><input type="text" name="code" maxlength="15" size="5" style="font-family:돋움; font-weight:bolder; font-size:80;"> <!--보통 13자이나 간혹 14자도 나오기에 넉넉하게 15자 제한을 걸어두었다.-->
+				&nbsp;&nbsp;&nbsp;<input type="submit" name="post" value="입력" style="font-family:돋움; font-weight:bolder; font-size:60; border-width:2;"></p>
+            </form>
+</td>
+    </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+
+</html><!--builded Web-Application by KAERIUS-->
